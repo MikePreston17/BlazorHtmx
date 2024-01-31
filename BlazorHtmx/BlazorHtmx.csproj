@@ -14,12 +14,16 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Watch Include="**\*.cshtml"/>
-        <Watch Include="bricks\*.html"/>
-        <Watch Include="**\*.config.json"/>
-        <Watch Include="/Pages/**/*.json"/>
-        <Watch Include="**\*.sql"/>
-        <Watch Include="**\*.cypher"/>
-        <Watch Include="**\*.css"/>
+        <Watch Include="**\*.cshtml" />
+        <Watch Include="bricks\*.html" />
+        <Watch Include="**\*.config.json" />
+        <Watch Include="/Pages/**/*.json" />
+        <Watch Include="**\*.sql" />
+        <Watch Include="**\*.cypher" />
+        <Watch Include="**\*.css" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="wwwroot\css" />
     </ItemGroup>
 </Project>
