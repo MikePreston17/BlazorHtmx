@@ -1,5 +1,6 @@
 using BlazorHtmx.Components;
 using BlazorHtmx.Components.Shared;
+using BlazorHtmx.Services;
 using CodeMechanic.FileSystem;
 using Microsoft.AspNetCore.Http.HttpResults;
 
@@ -13,6 +14,10 @@ builder.Services.AddRazorComponents()
 
 builder.Services
     .AddSingleton<HtmxCounter.HtmxCounterState>();
+
+
+builder.Services
+    .AddSingleton<ITodoistService, TodoistService>();
 
 var app = builder.Build();
 

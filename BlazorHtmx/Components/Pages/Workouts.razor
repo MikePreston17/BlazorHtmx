@@ -1,25 +1,20 @@
-﻿@page "/counter"
+@page "/workouts"
 @using CodeMechanic.Diagnostics
 @using BlazorHtmx.Services
 @rendermode InteractiveServer
 @inject ITodoistService todoist_svc;
 
-<PageTitle>Counter</PageTitle>
-
-<h1>Counter</h1>
-
-<p role="status">Current count: @currentCount</p>
-
-<button class="btn btn-primary"
-        @onclick="IncrementCount">
-    Click me
-</button>
-
+<PageTitle>Workouts</PageTitle>
 
 <div x-data="setup()">
     <div id="main_grid">
 
         <section>
+
+            <h1>Counter</h1>
+
+            <p role="status">Current count: @currentCount</p>
+
             <p>
                 @* <button class="btn btn-primary" @onclick="RunCurl">GET Todoist Tasks</button> *@
                 @* <button class="btn btn-primary" @onclick="() => Delete(new Guid())">DELETE task ❌</button> *@
@@ -234,9 +229,28 @@
     private async Task IncrementCount()
     {
         currentCount++;
-        currentCount.Dump(nameof(currentCount));
-        var x = await new TodoistService().RunCommand("", null);
-        x.Dump("funny...");
+    // currentCount.Dump(nameof(currentCount));
+
+        string token = Environment.GetEnvironmentVariable("TODOIST_API_KEY");
+        string getcurl = TodoistCurls.GetMethod(token);
+        var getoptions = await new TodoistService().RunCommand(getcurl, CurlRegex.GET);
+
+
+        Console.WriteLine("headers :>> " + getoptions.raw_headers);
+        Console.WriteLine("bt :>> " + getoptions.bearer_token);
+        Console.WriteLine("method :>> " + getoptions.execution_method);
+
+
+    // string postcurl = TodoistCurls.PostMethod(token, "{\"name\": \"Shopping List\"}");
+    // var postoptions = await new TodoistService().RunCommand(postcurl, CurlRegex.POST);
+    //
+    // Console.WriteLine("headers :>> " + postoptions.raw_headers);
+    // Console.WriteLine("bt :>> " + postoptions.bearer_token);
+    // Console.WriteLine("method :>> " + postoptions.execution_method);
+
+
+    // var project = await new TodoistService().GetProjectsAsync(options.bearer_token);
+    // project.Dump("funny...");
     }
 
 }
