@@ -10,6 +10,12 @@ public static class CurlRegexExtensions
         new Dictionary<string, Regex>();
 }
 
+
+public record CurlHeader
+{
+    
+}
+
 public class CurlRegex : Enumeration
 {
     //https://regex101.com/r/K4Bv8n/1
@@ -22,7 +28,7 @@ public class CurlRegex : Enumeration
 
     // todo: https://regex101.com/r/qYhFGD/1
     public static CurlRegex HEADERS = new CurlRegex(3, nameof(HEADERS),
-        @"(?<headers>(-H\s*""(?<header_name>[a-zA-Z-]+):\s*(Bearer\s*(?<bearer_token>[a-zA-Z\d]+))""\s*))");
+        @"(?<raw_headers>(-H\s*""(?<header_name>[a-zA-Z-]+):\s*(Bearer\s*(?<bearer_token>[a-zA-Z\d]+))""\s*))");
 
 
     public readonly Regex compiled;

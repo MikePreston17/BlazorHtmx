@@ -1,0 +1,24 @@
+@using CodeMechanic.Diagnostics
+<h3>SnackCounter</h3>
+
+<section>
+
+    <h1>Snack Counter</h1>
+
+    <p role="status">Current count: @currentCount</p>
+
+    <p>
+        <button class="btn btn-ghost" @onclick="IncrementCount">Increment</button>
+    </p>
+</section>
+
+@code {
+    private int currentCount = 0;
+
+    private async Task IncrementCount()
+    {
+        currentCount++;
+        currentCount.Dump(nameof(currentCount));
+    }
+
+}
