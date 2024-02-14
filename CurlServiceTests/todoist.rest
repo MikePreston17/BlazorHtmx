@@ -1,0 +1,5 @@
+# Get  User's projects
+ $ curl -X GET \
+  https://api.todoist.com/rest/v2/projects \
+  -H "Authorization: Bearer 0123456789abcdef0123456789"
+

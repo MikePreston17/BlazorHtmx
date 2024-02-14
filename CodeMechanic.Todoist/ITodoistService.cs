@@ -1,12 +1,13 @@
+using System.Text.RegularExpressions;
 using CodeMechanic.Advanced.Regex;
 using CodeMechanic.Diagnostics;
 using CodeMechanic.Types;
 
-namespace BlazorHtmx.Services;
+namespace CodeMechanic.Todoist;
 
 public interface ITodoistService
 {
-    Task<CurlOptions> RunCommand(string curl, CurlRegex curlRegex);
+    Task<CurlOptions> RunCommand(string curl);
 }
 
 public class TodoistService : ITodoistService
@@ -15,8 +16,9 @@ public class TodoistService : ITodoistService
     {
     }
 
-    public async Task<CurlOptions> RunCommand(string curl, CurlRegex curlRegex)
+    public async Task<CurlOptions> RunCommand(string curl)
     {
+        var curlRegex = get_regex(curl);
         Console.WriteLine(curl);
         var regex = CurlRegex.Find(curlRegex);
         // regex.Dump("regex");
@@ -28,6 +30,21 @@ public class TodoistService : ITodoistService
 
         curlOptions.Dump(nameof(curlOptions));
         return curlOptions;
+    }
+
+    private CurlRegex get_regex(string curl)
+    {
+        if (Regex.IsMatch(curl, @"-X\s*(GET)"))
+        {
+            return CurlRegex.GET;
+        }
+
+        if (Regex.IsMatch(curl, @"-X\s*(POST)"))
+        {
+            return CurlRegex.POST;
+        }
+
+        return CurlRegex.HEADERS;
     }
 
     // public async Task<string> GetProjectsAsync(string apiKey = "")
@@ -67,17 +84,17 @@ public static class TodoistCurls
     public static Func<string, string> GetMethod = (string token) => $"""
                         $ curl -X GET \
                   https://api.todoist.com/rest/v2/projects \
-                  -H "Authorization: Bearer { token}     "          
+                  -H "Authorization: Bearer { token}           "          
                  """ ;
 
     public static Func<string, string, string> PostMethod = (string token, string data) => $"""
                         
                     $ curl "https://api.todoist.com/rest/v2/projects" \
                         -X POST \
-                        --data '{ data} ' \
+                        --data '{ data}       ' \
                         -H "Content-Type: application/json" \
                         -H "X-Request-Id: $(uuidgen)" \
-                        -H "Authorization: Bearer { token} "         
+                        -H "Authorization: Bearer { token}       "         
                  """ ;
 }
 
