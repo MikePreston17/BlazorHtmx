@@ -1,6 +1,5 @@
 @page "/workouts"
-@using BlazorHtmx.Services
-@rendermode InteractiveServer
+@using CodeMechanic.Todoist
 @inject ITodoistService todoist_svc;
 
 <PageTitle>Workouts</PageTitle>
@@ -228,14 +227,14 @@
     // project.Dump("funny...");
     @* } *@
 
-    private async Task CanParseCurlGET()
-    {
-        string token = Environment.GetEnvironmentVariable("TODOIST_API_KEY");
-        string getcurl = TodoistCurls.GetMethod(token);
-        var getoptions = await new TodoistService().RunCommand(getcurl, CurlRegex.GET);
-
-
-        string html = getoptions.ToString();
-    }
+    // private async Task CanParseCurlGET()
+    // {
+    //     string token = Environment.GetEnvironmentVariable("TODOIST_API_KEY");
+    //     string getcurl = TodoistCurls.GetMethod(token);
+    //     var getoptions = await new TodoistService().RunCommand(getcurl, CurlRegex.GET);
+    //
+    //
+    //     string html = getoptions.ToString();
+    // }
 
 }

@@ -21,4 +21,8 @@
       <ProjectReference Include="..\CodeMechanic.Todoist\CodeMechanic.Todoist.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="samples" />
+    </ItemGroup>
+
 </Project>

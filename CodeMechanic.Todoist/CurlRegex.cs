@@ -18,9 +18,17 @@ public record CurlHeader
 
 public class CurlRegex : Enumeration
 {
-    //https://regex101.com/r/K4Bv8n/1
+    //https://regex101.com/r/yUiAPZ/1
+    /* old:
+     ^\s*\$?\s*curl\s*-X\s*(?<execution_method>GET|POST|DELETE)(?:\s*\\)?\s*(?<uri>https.*)(\s*\\)\s*-H\s*(?<raw_headers>[""]\w+:\s*Bearer\s*(?<bearer_token>.*)"")
+     
+     // with curl name:
+     
+     (?<curl_name>#.*$)\s*\$?\s*curl\s*((-X)?\s(?<execution_method>GET)?\s\\\s*)?""?(?<uri>https:\/\/.*?)""?\s*\\\s*-H(?<raw_headers>\s*""Authorization:\s*Bearer\s*(?<bearer_token>\$?\w+)"")
+     
+     */
     public static CurlRegex GET = new CurlRegex(1, nameof(GET),
-        @"^\s*\$?\s*curl\s*-X\s*(?<execution_method>GET|POST|DELETE)(?:\s*\\)?\s*(?<uri>https.*)(\s*\\)\s*-H\s*(?<raw_headers>[""]\w+:\s*Bearer\s*(?<bearer_token>.*)"")");
+        @"curl\s*((-X)?\s(?<execution_method>GET)?\s\\\s*)?""?(?<uri>https:\/\/.*?)""?\s*\\\s*-H(?<raw_headers>\s*""Authorization:\s*Bearer\s*(?<bearer_token>\$?\w+)"")");
 
     // https://regex101.com/r/QAkG7A/1
     public static CurlRegex POST = new CurlRegex(2, nameof(POST),
@@ -37,9 +45,9 @@ public class CurlRegex : Enumeration
     public CurlRegex(int id, string name, string pattern) : base(id, name)
     {
         this.compiled = new Regex(pattern, RegexOptions.Compiled);
-        CurlRegexExtensions.known_curls.Dump("dictionary so far");
+        // CurlRegexExtensions.known_curls.Dump("dictionary so far");
         CurlRegexExtensions.known_curls.TryAdd(name, compiled);
-        CurlRegexExtensions.known_curls.Dump();
+        // CurlRegexExtensions.known_curls.Dump();
     }
 
 

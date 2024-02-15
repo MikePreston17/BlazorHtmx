@@ -5,6 +5,7 @@ namespace CodeMechanic.Todoist;
 
 public class CurlOptions
 {
+    // public string curl_name { get; set; } = string.Empty;
     public string bearer_token { get; set; } = string.Empty;
 
     public string execution_method { get; set; } = string.Empty;

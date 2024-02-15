@@ -3,3 +3,27 @@
   https://api.todoist.com/rest/v2/projects \
   -H "Authorization: Bearer 0123456789abcdef0123456789"
 
+# Get a project
+$ curl "https://api.todoist.com/rest/v2/projects/2203306141" \
+  -H "Authorization: Bearer $token"
+  
+# Get all tasks
+$ curl -X GET \
+  https://api.todoist.com/rest/v2/tasks \
+  -H "Authorization: Bearer $token"
+
+# Get all comments
+$ curl "https://api.todoist.com/rest/v2/comments?task_id=2995104339" \
+  -H "Authorization: Bearer $token"
+
+# Get a specific comment
+$ curl "https://api.todoist.com/rest/v2/comments/2992679862" \
+  -H "Authorization: Bearer $token"
+
+# Get all personal labels
+$ curl "https://api.todoist.com/rest/v2/labels" \
+    -H "Authorization: Bearer $token"
+
+# Get a personal label
+$ curl "https://api.todoist.com/rest/v2/labels/2156154810" \
+    -H "Authorization: Bearer $token"

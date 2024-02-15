@@ -7,17 +7,25 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Content Include="nuget.config">
-        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      </Content>
+        <Content Include="nuget.config">
+            <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        </Content>
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="CodeMechanic.FileSystem" Version="1.0.6" />
-      <PackageReference Include="CodeMechanic.Regex" Version="1.0.2" />
-      <PackageReference Include="CodeMechanic.Types" Version="1.0.7" />
+        <PackageReference Include="CodeMechanic.FileSystem" Version="1.0.6" />
+        <PackageReference Include="CodeMechanic.Regex" Version="1.0.2" />
+        <PackageReference Include="CodeMechanic.Types" Version="1.0.7" />
+        <PackageReference Include="System.Runtime.Caching" Version="8.0.0" />
     </ItemGroup>
 
+    <ItemGroup>
+        <!-- The following should embed every query file into the assembly
+        Credit:
+        https://stackoverflow.com/questions/69258345/add-all-files-in-folder-including-sub-dir-as-embedded-resource
+        -->
+        <EmbeddedResource Include="**\*.rest"></EmbeddedResource>
+    </ItemGroup>
 </Project>
