@@ -18,7 +18,7 @@ public record CurlHeader
 
 public class CurlRegex : Enumeration
 {
-    //https://regex101.com/r/yUiAPZ/1
+    //https://regex101.com/r/Hinu99/1
     /* old:
      ^\s*\$?\s*curl\s*-X\s*(?<execution_method>GET|POST|DELETE)(?:\s*\\)?\s*(?<uri>https.*)(\s*\\)\s*-H\s*(?<raw_headers>[""]\w+:\s*Bearer\s*(?<bearer_token>.*)"")
      
