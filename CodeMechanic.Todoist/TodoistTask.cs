@@ -1,5 +1,3 @@
-using Newtonsoft.Json;
-
 namespace CodeMechanic.Todoist;
 
 public class TodoistTask

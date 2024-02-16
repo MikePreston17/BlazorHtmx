@@ -2,7 +2,6 @@ using System.Text.RegularExpressions;
 using CodeMechanic.Diagnostics;
 using CodeMechanic.FileSystem;
 using CodeMechanic.Todoist;
-using Newtonsoft.Json;
 
 namespace TestProject1;
 

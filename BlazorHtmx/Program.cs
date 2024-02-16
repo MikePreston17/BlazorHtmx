@@ -39,7 +39,7 @@ app.MapRazorComponents<App>()
 
 app.MapGet("/love-htmx",
     () => new RazorComponentResult<LoveHtmx>(new { Message = "I ❤️ ASP.NET Core" }));
-
+    
 
 app.MapPost("/count",
     (HtmxCounter.HtmxCounterState value) =>

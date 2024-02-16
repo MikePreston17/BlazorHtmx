@@ -1,6 +1,5 @@
 @page "/todoist"
 @using CodeMechanic.Todoist
-@using CodeMechanic.Diagnostics
 @inject ITodoistService todoist;
 
 <div x-data="setup_todoist()">
@@ -68,12 +67,11 @@
 
         @foreach (var project in todoist_stats.TodoistProjects)
         {
-            var related_tasks = find_tasks_by_project_name(todoist_stats, project);
-            var completed_tasks = find_tasks_completed_for_this_project(todoist_stats, project);
+            var related_tasks = todoist_stats.FindTodosByProject(project);
+            var completed_tasks = todoist_stats.FindCompletedTodos(project);
 
             <div class="card w-96 bg-base-100 shadow-xl">
                 <figure>
-                    @* <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes"/> *@
 
                     <div class="stats shadow">
                         <div class="stat">
@@ -141,6 +139,8 @@
 
     protected override async Task OnInitializedAsync()
     {
+        await base.OnInitializedAsync();
+
         todoist_stats = await todoist.GetProjectsAndTasks();
         project_total_count = todoist_stats.TodoistProjects.Count;
         completed_tasks_count = todoist_stats.CompletedTasks.Count;
@@ -148,33 +148,6 @@
     }
 
 
-    public List<TodoistTask> find_tasks_by_project_name(TodoistStats todoist_stats, TodoistProject project)
-    {
-        var related_tasks = todoist_stats.TodoistProjects
-            .Join(todoist_stats.TodoistTasks
-                , project => project.id
-                , task => task.project_id
-                , (project, task) => new { project, task })
-            .Where(@t => @t.project.name == project.name)
-            .Select(combo => combo.task);
 
-        return related_tasks.ToList();
-    }
-
-    public List<CompletedTodoistTask> find_tasks_completed_for_this_project(TodoistStats todoist_stats, TodoistProject project)
-    {
-        var related_tasks = find_tasks_by_project_name(todoist_stats, project);
-        var all_completed_tasks = this.todoist_stats.CompletedTasks;
-
-        var completed_this_project = related_tasks
-            .Join(all_completed_tasks
-                , project => project.id
-                , completed => completed.task_id
-                , (todo, completed_task) => new { todo, completed_task })
-            .Select(combo => combo.completed_task)
-            .ToList();
-
-        return completed_this_project;
-    }
 
 }
