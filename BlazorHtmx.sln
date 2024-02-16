@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeMechanic.Airtable", "Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SvelteApp", "SvelteApp\SvelteApp.csproj", "{3D7F2C45-63F7-4028-9B2E-7CAA7F28CD51}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SvelteRazor", "SvelteAspNetCore\SvelteRazor.csproj", "{285DB1D5-7365-4547-8DE6-402B67855288}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,5 +45,9 @@ Global
 		{3D7F2C45-63F7-4028-9B2E-7CAA7F28CD51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D7F2C45-63F7-4028-9B2E-7CAA7F28CD51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D7F2C45-63F7-4028-9B2E-7CAA7F28CD51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{285DB1D5-7365-4547-8DE6-402B67855288}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{285DB1D5-7365-4547-8DE6-402B67855288}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{285DB1D5-7365-4547-8DE6-402B67855288}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{285DB1D5-7365-4547-8DE6-402B67855288}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
