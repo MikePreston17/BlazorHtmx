@@ -1,0 +1,16 @@
+﻿# Get all the Parts!
+curl "https://api.airtable.com/v0/app33DDBeyXEGRflo/Parts?maxRecords=3&view=Grid%20view" \
+-H "Authorization: Bearer YOUR_SECRET_API_TOKEN"
+
+# Get Single part
+curl https://api.airtable.com/v0/app33DDBeyXEGRflo/Parts/reckOPdw8Gfo5MDOX \
+-H "Authorization: Bearer YOUR_SECRET_API_TOKEN"
+
+
+# Get all the Builds!
+curl "https://api.airtable.com/v0/app33DDBeyXEGRflo/Builds?maxRecords=3&view=Grid%20view" \
+-H "Authorization: Bearer YOUR_SECRET_API_TOKEN"
+
+# Get Specific Build
+curl https://api.airtable.com/v0/app33DDBeyXEGRflo/Builds/rec9T54BPxDK83b3p \
+-H "Authorization: Bearer YOUR_SECRET_API_TOKEN"

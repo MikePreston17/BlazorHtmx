@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurlServiceTests", "CurlSer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorDemo", "BlazorDemo\BlazorDemo.csproj", "{F9136A85-A6EE-42D8-ACBA-67D4BCC69BC8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeMechanic.Airtable", "CodeMechanic.Airtable\CodeMechanic.Airtable.csproj", "{C0A738EA-9AC7-41CD-BC64-2086DA5AE780}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SvelteApp", "SvelteApp\SvelteApp.csproj", "{3D7F2C45-63F7-4028-9B2E-7CAA7F28CD51}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,5 +35,13 @@ Global
 		{F9136A85-A6EE-42D8-ACBA-67D4BCC69BC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9136A85-A6EE-42D8-ACBA-67D4BCC69BC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9136A85-A6EE-42D8-ACBA-67D4BCC69BC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0A738EA-9AC7-41CD-BC64-2086DA5AE780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0A738EA-9AC7-41CD-BC64-2086DA5AE780}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0A738EA-9AC7-41CD-BC64-2086DA5AE780}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0A738EA-9AC7-41CD-BC64-2086DA5AE780}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D7F2C45-63F7-4028-9B2E-7CAA7F28CD51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D7F2C45-63F7-4028-9B2E-7CAA7F28CD51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D7F2C45-63F7-4028-9B2E-7CAA7F28CD51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D7F2C45-63F7-4028-9B2E-7CAA7F28CD51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

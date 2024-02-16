@@ -6,16 +6,18 @@
 <PageTitle>Sandbox</PageTitle>
 
 <script>   
-function setup_sandbox() {
-    return {
-        open: false
-    }
-}
+// function setup_sandbox() {
+//     return {
+//         open: false
+//     }
+// }
 </script>
 
 <h1>Hello there!</h1>
 
-<div x-data="setup_sandbox()" class="card bg-base-200 w-80">
+<div x-data="{
+    open: false
+}" class="card bg-base-200 w-80">
     <div class="card-body">
         <input placeholder="Email" class="input input-bordered"/>
         <label class="label cursor-pointer">
@@ -29,7 +31,7 @@ function setup_sandbox() {
         <button class="btn btn-neutral">Save</button>
     </div>
 
-    <button @click="open = true">Expand</button>
+    <button x-on:click="open = true">Expand</button>
 
     <span x-show="open">
         Content...
@@ -49,7 +51,5 @@ function setup_sandbox() {
 
 @code {
 
-   
+
 }
-
-
