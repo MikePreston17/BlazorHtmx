@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# 
+#
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorHtmx", "BlazorHtmx\BlazorHtmx.csproj", "{9DC28A68-E582-4B28-8197-CDB9E824F67B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeMechanic.Todoist", "CodeMechanic.Todoist\CodeMechanic.Todoist.csproj", "{304DA9DF-4119-4A0E-AD68-41FA2B67925F}"

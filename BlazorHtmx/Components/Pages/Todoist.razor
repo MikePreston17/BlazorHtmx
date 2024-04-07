@@ -52,6 +52,7 @@
                             <div class="stat place-items-center">
                                 <div class="stat-title">Tasks Completed</div>
                                 <div class="stat-value">@completed_tasks_count</div>
+                                <div class="stat-desc text-ghost font-italic">(this week)</div>
                                 @* <div class="stat-desc">↘︎ 90 (14%)</div> *@
                             </div>
 
@@ -69,30 +70,27 @@
         {
             var related_tasks = todoist_stats.FindTodosByProject(project);
             var completed_tasks = todoist_stats.FindCompletedTodos(project);
+            // var done_percentage = MathExtensions.GetPercentChange(completed_tasks_count, related_tasks.Count);
 
             <div class="card w-96 bg-base-100 shadow-xl">
-                <figure>
 
-                    <div class="stats shadow">
-                        <div class="stat">
-                            <div class="stat-figure text-secondary">
+                <div class="stats  border-2 border-accent-content/10">
+                    <div class="stat">
+                        <div class="stat-figure text-secondary">
 
-                                <div class="radial-progress" style="--value:80;" role="progressbar">
-                                    @* @done_percentage% *@
-                                    50%
-                                </div>
+                            <div class="radial-progress" style="--value:80;" role="progressbar">
+                                @* @done_percentage % *@
                             </div>
-                            <div class="stat-value">@completed_tasks.Count</div>
-                            <div class="stat-title">Tasks done</div>
-                            <div class="stat-desc text-secondary">
-                                @related_tasks.Count total tasks in this project.
-                            </div>
-                            @* <div class="stat-desc text-secondary">@all_tasks_count - @completed_tasks_count tasks remaining</div> *@
                         </div>
-
+                        <div class="stat-value">@completed_tasks.Count</div>
+                        <div class="stat-title">Tasks done</div>
+                        <div class="stat-desc text-secondary">
+                            @related_tasks.Count total tasks in this project.
+                        </div>
                     </div>
 
-                </figure>
+                </div>
+
                 <div class="card-body">
                     <h2 class="card-title">
                         @project.name
