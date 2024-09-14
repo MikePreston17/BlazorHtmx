@@ -35,7 +35,7 @@
       <PackageReference Include="CodeMechanic.FileSystem" Version="1.0.6" />
       <PackageReference Include="CodeMechanic.Maths" Version="1.0.0" />
       <PackageReference Include="CodeMechanic.Reflection" Version="1.0.4" />
-      <PackageReference Include="CodeMechanic.Regex" Version="1.0.2" />
+      <PackageReference Include="CodeMechanic.RegularExpressions" Version="1.0.1" />
       <PackageReference Include="CodeMechanic.Types" Version="1.0.7" />
       <PackageReference Include="System.Runtime.Caching" Version="8.0.0" />
     </ItemGroup>

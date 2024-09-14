@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net7.0</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
@@ -16,7 +16,7 @@
 
     <ItemGroup>
         <PackageReference Include="CodeMechanic.FileSystem" Version="1.0.6" />
-        <PackageReference Include="CodeMechanic.Regex" Version="1.0.2" />
+        <PackageReference Include="CodeMechanic.RegularExpressions" Version="1.0.1" />
         <PackageReference Include="CodeMechanic.Types" Version="1.0.7" />
         <PackageReference Include="System.Runtime.Caching" Version="8.0.0" />
     </ItemGroup>
